@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import { Link, NavLink, Outlet } from 'react-router-dom'
-import { SHOP_URL } from '../config'
+import { Menu, X } from 'lucide-react'
+import { PRODUCT_URL, SHOP_URL } from '../config'
 
 const YEAR = new Date().getFullYear()
 
@@ -11,9 +13,9 @@ const NAV = [
   { to: '/contact', label: 'Contact' },
 ]
 
-function Brand() {
+function Brand({ onClick }: { onClick?: () => void }) {
   return (
-    <Link className="brand" to="/">
+    <Link className="brand" to="/" onClick={onClick}>
       <strong>NELLIE</strong>
       <span>&amp; THE LITTLES</span>
     </Link>
@@ -21,23 +23,38 @@ function Brand() {
 }
 
 function Layout() {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const closeMenu = () => setMenuOpen(false)
+
   return (
     <>
       <div className="announcement">Meant to chew. Made to love.</div>
 
       <header className="site-header">
         <div className="container">
-          <Brand />
-          <nav className="nav">
+          <Brand onClick={closeMenu} />
+          <nav id="site-nav" className={menuOpen ? 'nav open' : 'nav'}>
             {NAV.map(({ to, label }) => (
-              <NavLink key={to} to={to} end>
+              <NavLink key={to} to={to} end onClick={closeMenu}>
                 {label}
               </NavLink>
             ))}
+          </nav>
+          <div className="header-actions">
             <a className="button" href={SHOP_URL} target="_blank" rel="noreferrer">
               Shop
             </a>
-          </nav>
+            <button
+              type="button"
+              className="menu-toggle"
+              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={menuOpen}
+              aria-controls="site-nav"
+              onClick={() => setMenuOpen(!menuOpen)}
+            >
+              {menuOpen ? <X size={26} /> : <Menu size={26} />}
+            </button>
+          </div>
         </div>
       </header>
 
@@ -61,6 +78,11 @@ function Layout() {
           <span>© {YEAR} Nellie &amp; the Littles. All rights reserved.</span>
         </div>
       </footer>
+
+      {/* Phone-only bar so the buy button is always within thumb reach */}
+      <a className="mobile-cta" href={PRODUCT_URL} target="_blank" rel="noreferrer">
+        Shop Nellie
+      </a>
     </>
   )
 }
