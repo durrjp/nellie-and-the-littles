@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, NavLink, Outlet } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
-import { PRODUCT_URL, SHOP_URL } from '../config'
+import { SHOP_URL } from '../config'
 
 const YEAR = new Date().getFullYear()
 
@@ -78,11 +78,6 @@ function Layout() {
           <span>© {YEAR} Nellie &amp; the Littles. All rights reserved.</span>
         </div>
       </footer>
-
-      {/* Phone-only bar so the buy button is always within thumb reach */}
-      <a className="mobile-cta" href={PRODUCT_URL} target="_blank" rel="noreferrer">
-        Shop Nellie
-      </a>
     </>
   )
 }

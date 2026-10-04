@@ -191,9 +191,6 @@ a {
   cursor: pointer;
 }
 
-.mobile-cta {
-  display: none;
-}
 
 /* Home */
 
@@ -560,11 +557,6 @@ a {
     display: inline-flex;
   }
 
-  /* The fixed Shop bar at the bottom replaces the header button */
-  .header-actions .button {
-    display: none;
-  }
-
   .nav {
     display: none;
     order: 3;
@@ -690,8 +682,6 @@ a {
     flex-direction: column;
     text-align: center;
     gap: 1.25rem;
-    /* room for the fixed Shop bar */
-    padding-bottom: 5.5rem;
   }
 
   .footer-links {
@@ -701,24 +691,5 @@ a {
 
   .footer-links a {
     padding-block: 0.5rem;
-  }
-
-  .mobile-cta {
-    display: block;
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 10;
-    padding: 1rem 1rem calc(1rem + env(safe-area-inset-bottom));
-    background: var(--green);
-    color: #fff;
-    text-align: center;
-    font-size: 0.9rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    text-decoration: none;
-    box-shadow: 0 -2px 10px rgb(0 0 0 / 0.12);
   }
 }
