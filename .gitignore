@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Shopify content export: contains personal contact details, keep out of the public repo
+src/assets/content/

@@ -1,0 +1,9 @@
+{
+  "name": "nellie-and-the-littles",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    // Serve index.html for unknown paths so /about, /faq etc. work on refresh
+    "not_found_handling": "single-page-application"
+  }
+}

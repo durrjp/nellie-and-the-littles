@@ -1,31 +1,37 @@
-import { SHOP_URL } from './config'
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
+import Layout from './components/Layout'
+import About from './pages/About'
+import Contact from './pages/Contact'
+import Faq from './pages/Faq'
+import Home from './pages/Home'
+import Product from './pages/Product'
 
-const YEAR = new Date().getFullYear()
+function NotFound() {
+  return (
+    <section className="section container">
+      <h1>Page not found</h1>
+      <p>The link may be incorrect, or the page has been removed.</p>
+      <Link className="button" to="/">
+        Back to home
+      </Link>
+    </section>
+  )
+}
 
 function App() {
   return (
-    <>
-      <header className="site-header">
-        <span className="brand">Nellie and the Littles</span>
-        <a className="button" href={SHOP_URL} target="_blank" rel="noreferrer">
-          Shop
-        </a>
-      </header>
-
-      <main>
-        <section className="hero">
-          <h1>Nellie and the Littles</h1>
-          <p>Placeholder copy. Design and content to come.</p>
-          <a className="button" href={SHOP_URL} target="_blank" rel="noreferrer">
-            Shop now
-          </a>
-        </section>
-      </main>
-
-      <footer className="site-footer">
-        © {YEAR} Nellie and the Littles
-      </footer>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="nellie" element={<Product />} />
+          <Route path="about" element={<About />} />
+          <Route path="faq" element={<Faq />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
