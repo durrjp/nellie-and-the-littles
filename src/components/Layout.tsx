@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link, NavLink, Outlet } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { SHOP_URL } from '../config'
+import Leaves from './Leaves'
 
 const YEAR = new Date().getFullYear()
 
@@ -28,6 +29,7 @@ function Layout() {
 
   return (
     <>
+      <Leaves />
       <div className="announcement">Meant to chew. Made to love.</div>
 
       <header className="site-header">
