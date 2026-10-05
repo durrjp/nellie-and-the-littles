@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, NavLink, Outlet } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
-import { SHOP_URL } from '../config'
+import { PRODUCT_URL } from '../config'
 import Leaves from './Leaves'
 
 const YEAR = new Date().getFullYear()
@@ -43,7 +43,7 @@ function Layout() {
             ))}
           </nav>
           <div className="header-actions">
-            <a className="button" href={SHOP_URL} target="_blank" rel="noreferrer">
+            <a className="button" href={PRODUCT_URL} target="_blank" rel="noreferrer">
               Shop
             </a>
             <button
@@ -73,7 +73,7 @@ function Layout() {
                 {label}
               </Link>
             ))}
-            <a href={SHOP_URL} target="_blank" rel="noreferrer">
+            <a href={PRODUCT_URL} target="_blank" rel="noreferrer">
               Shop
             </a>
           </div>
