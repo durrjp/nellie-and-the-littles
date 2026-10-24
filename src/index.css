@@ -3,7 +3,8 @@
   --sage: #bbcdb4;
   --sage-light: #e4ebe0;
   /* Darker shades of the same green, for text and buttons (readable contrast) */
-  --green: #4f6b4a;
+  --green: #6e8a68;
+  --green-hover: #5a7655;
   --green-dark: #34482f;
   --cream: #fbf8f2;
   --text: #2f352d;
@@ -85,10 +86,10 @@ a {
   display: inline-block;
   padding: 0.75rem 1.75rem;
   border-radius: 6px;
-  background: var(--green);
-  color: #fff;
+  background: var(--sage);
+  color: var(--green-dark);
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   text-decoration: none;
@@ -96,7 +97,7 @@ a {
 }
 
 .button:hover {
-  background: var(--green-dark);
+  background: #a9bfa1;
 }
 
 /* Falling leaves background */
@@ -280,6 +281,13 @@ a {
   max-height: 36rem;
   object-fit: cover;
   object-position: center 25%;
+}
+
+/* Logo artwork: show it whole on the page cream */
+.hero img.hero-logo {
+  object-fit: contain;
+  padding: 2rem;
+  background: var(--cream);
 }
 
 .badges {

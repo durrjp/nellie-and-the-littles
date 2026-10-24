@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { Droplets, Hand, Leaf, ShieldCheck, Sparkles, Stethoscope } from 'lucide-react'
 import { PRODUCT_URL } from '../config'
 import { FOUNDER } from '../content'
-import heroImg from '../assets/images/jessica-laughing.webp'
+import logoImg from '../assets/images/nellie-logo-transparent.webp'
 import productImg from '../assets/images/jessica-holding-nellie.webp'
 import founderImg from '../assets/images/jessica-portrait.webp'
 
@@ -35,7 +35,7 @@ function Home() {
             Shop Nellie
           </a>
         </div>
-        <img src={heroImg} alt="Jessica Adams, founder of Nellie & the Littles, laughing" />
+        <img className="hero-logo" src={logoImg} alt="Nellie the Elephant logo" />
       </section>
 
       <div className="container">
