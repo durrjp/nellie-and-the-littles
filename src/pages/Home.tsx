@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { Droplets, Hand, Leaf, ShieldCheck, Sparkles, Stethoscope } from 'lucide-react'
 import { PRODUCT_URL } from '../config'
 import { FOUNDER } from '../content'
-import logoImg from '../assets/images/nellie-logo-transparent.webp'
+import heroImg from '../assets/images/baby-sage-elephant-teether.webp'
 import productImg from '../assets/images/jessica-holding-nellie.webp'
 import founderImg from '../assets/images/jessica-portrait.webp'
 
@@ -35,7 +35,7 @@ function Home() {
             Shop Nellie
           </a>
         </div>
-        <img className="hero-logo" src={logoImg} alt="Nellie the Elephant logo" />
+        <img src={heroImg} alt="Smiling baby chewing on a Nellie the Elephant teether" />
       </section>
 
       <div className="container">
@@ -78,7 +78,7 @@ function Home() {
           <img src={founderImg} alt="Jessica Adams, FNP-C" />
           <div className="feature-copy">
             <h2>Designed with Love by Jessica Adams, FNP-C</h2>
-            <p>{FOUNDER.paragraphs[0]}</p>
+            <p>{FOUNDER.highlight}</p>
             <Link className="button" to="/about">
               Meet Jessica
             </Link>

@@ -35,9 +35,16 @@ export const FOUNDER = {
   role: 'Creator of Nellie and the Littles',
   intro:
     'Hi, I’m Jessica — a Family Nurse Practitioner, a lifelong caregiver, and someone who deeply understands the importance of comfort, safety, and emotional connection during a child’s earliest stages.',
-  paragraphs: [
+  // Short line used on the home page
+  highlight:
     'I designed Nellie with intention: to be more than a teether — to be a tiny companion for little wild hearts.',
-    'With gentle textures that support sensory development, shapes that encourage fine motor skills, and a soothing presence babies love to hold, Nellie was created to bring emotional comfort and developmental support together in one sweet little friend.',
+  // Jessica's letter on the About page
+  letter: [
+    'When I first dreamed up Nellie, I knew I wanted to create something more than just another baby teether. I envisioned a sweet little companion that could bring comfort, familiarity, and a sense of security to babies as they grow—something that felt a little more like a first lovey.',
+    'With my background in healthcare, I’ve always believed that the smallest details can make the biggest difference. I wanted Nellie to combine thoughtful design, quality materials, and safety with something equally important: an emotional connection.',
+    'From her sweet elephant features to the textures designed for tiny hands and teething gums, every detail was created with love and intention. My hope is that Nellie becomes more than just a teether, but a familiar little friend your baby reaches for during life’s everyday moments.',
+    'What started as a simple idea has grown into something incredibly special to me, and I’m so excited to share Nellie with you and your little ones.',
+    'Thank you for supporting my small business and allowing Nellie to become a little part of your family’s story.',
   ],
 }
 

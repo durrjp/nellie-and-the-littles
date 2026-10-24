@@ -12,6 +12,7 @@
 
   --font-heading: 'Lora Variable', Georgia, serif;
   --font-body: 'Jost Variable', system-ui, sans-serif;
+  --font-script: 'Dancing Script', cursive;
 
   font-family: var(--font-body);
   font-size: 17px;
@@ -471,6 +472,49 @@ a {
   border-radius: 12px;
 }
 
+/* Short intro text sits level with the middle of Jessica's photo */
+.about {
+  align-items: center;
+}
+
+/* Jessica's letter: serif text on a paper card, signed in script */
+.letter {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 3rem 3.5rem;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgb(52 72 47 / 0.06);
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  line-height: 1.85;
+}
+
+.letter h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.letter-sign {
+  margin: 2rem 0 0;
+  font-style: italic;
+}
+
+.letter-signature {
+  font-family: var(--font-script);
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--green-dark);
+  margin: 0.25rem 0 0.5rem;
+}
+
+.letter .eyebrow {
+  font-family: var(--font-body);
+  margin: 0;
+}
+
 .founder-name {
   font-family: var(--font-heading);
   font-size: 1.4rem;
@@ -564,8 +608,22 @@ a {
 }
 
 .faq-more {
-  text-align: center;
   margin-top: 2rem;
+}
+
+/* FAQs on the left, logo centred beside them on the right */
+.faq-page {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.faq-logo {
+  width: 100%;
+  max-width: 26rem;
+  align-self: center;
+  justify-self: center;
 }
 
 .contact-details {
@@ -740,6 +798,26 @@ a {
 
   .faq summary {
     padding: 1.1rem 1rem;
+  }
+
+  .letter {
+    padding: 2rem 1.25rem;
+    font-size: 1.05rem;
+  }
+
+  /* Phones: smaller logo above the questions */
+  .faq-page {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .faq-page > * {
+    min-width: 0;
+  }
+
+  .faq-logo {
+    order: -1;
+    max-width: 14rem;
   }
 
   .contact-details a {

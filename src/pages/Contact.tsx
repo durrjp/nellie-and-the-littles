@@ -1,6 +1,6 @@
 import { AtSign, Clock, Mail, MapPin } from 'lucide-react'
 import { CONTACT } from '../content'
-import boxImg from '../assets/images/product-box.webp'
+import boxImg from '../assets/images/product-box-white.webp'
 
 function Contact() {
   return (
