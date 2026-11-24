@@ -2,7 +2,8 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Leaf } from 'lucide-react'
 import SpecList from '../components/SpecList'
-import { PRODUCT_URL } from '../config'
+import { ReviewWidget, StarBadge } from '../components/JudgeMe'
+import { JUDGEME_ENABLED, PRODUCT_URL } from '../config'
 import { PRODUCT, TAGLINE } from '../content'
 import frontImg from '../assets/images/nellie-front.webp'
 import boxImg from '../assets/images/product-box-white.webp'
@@ -22,63 +23,73 @@ function Product() {
   const [active, setActive] = useState(0)
 
   return (
-    <section className="section container product">
-      <div className="gallery">
-        <img className="gallery-main" src={GALLERY[active].src} alt={GALLERY[active].alt} />
-        <div className="gallery-thumbs">
-          {GALLERY.map(({ src, alt }, i) => (
-            <button
-              key={src}
-              type="button"
-              className={i === active ? 'active' : undefined}
-              onClick={() => setActive(i)}
-              aria-label={alt}
-            >
-              <img src={src} alt="" />
-            </button>
-          ))}
-        </div>
-      </div>
-
-      <div>
-        <p className="eyebrow">{TAGLINE}</p>
-        <h1>{PRODUCT.name}</h1>
-        {PRODUCT.intro.map((text) => (
-          <p key={text}>{text}</p>
-        ))}
-        <a className="button" href={PRODUCT_URL} target="_blank" rel="noreferrer">
-          Shop Nellie
-        </a>
-
-        <details className="details-panel">
-          <summary>Product Details &amp; Specifications</summary>
-          <div className="details-panel-body">
-            <p>{PRODUCT.details.intro}</p>
-            <SpecList specs={PRODUCT.details.specs} />
-            <h3>Care Instructions</h3>
-            <p>{PRODUCT.details.care}</p>
-            <h3>Safety &amp; Materials</h3>
-            <p>
-              {PRODUCT.details.safety} See our <Link to="/faq">Safety &amp; FAQ page</Link> for more
-              information.
-            </p>
+    <>
+      <section className="section container product">
+        <div className="gallery">
+          <img className="gallery-main" src={GALLERY[active].src} alt={GALLERY[active].alt} />
+          <div className="gallery-thumbs">
+            {GALLERY.map(({ src, alt }, i) => (
+              <button
+                key={src}
+                type="button"
+                className={i === active ? 'active' : undefined}
+                onClick={() => setActive(i)}
+                aria-label={alt}
+              >
+                <img src={src} alt="" />
+              </button>
+            ))}
           </div>
-        </details>
+        </div>
 
-        <h2 className="product-subhead">Why you’ll love Nellie</h2>
-        <ul className="leaf-list">
-          {PRODUCT.features.map((feature) => (
-            <li key={feature}>
-              <Leaf size={16} strokeWidth={1.5} />
-              {feature}
-            </li>
+        <div>
+          <p className="eyebrow">{TAGLINE}</p>
+          <h1>{PRODUCT.name}</h1>
+          {JUDGEME_ENABLED && <StarBadge />}
+          {PRODUCT.intro.map((text) => (
+            <p key={text}>{text}</p>
           ))}
-        </ul>
+          <a className="button" href={PRODUCT_URL} target="_blank" rel="noreferrer">
+            Shop Nellie
+          </a>
 
-        <p className="note">{PRODUCT.signoff}</p>
-        <p className="fine-print">{PRODUCT.safety}</p>
-      </div>
-    </section>
+          <details className="details-panel">
+            <summary>Product Details &amp; Specifications</summary>
+            <div className="details-panel-body">
+              <p>{PRODUCT.details.intro}</p>
+              <SpecList specs={PRODUCT.details.specs} />
+              <h3>Care Instructions</h3>
+              <p>{PRODUCT.details.care}</p>
+              <h3>Safety &amp; Materials</h3>
+              <p>
+                {PRODUCT.details.safety} See our <Link to="/faq">Safety &amp; FAQ page</Link> for more
+                information.
+              </p>
+            </div>
+          </details>
+
+          <h2 className="product-subhead">Why you’ll love Nellie</h2>
+          <ul className="leaf-list">
+            {PRODUCT.features.map((feature) => (
+              <li key={feature}>
+                <Leaf size={16} strokeWidth={1.5} />
+                {feature}
+              </li>
+            ))}
+          </ul>
+
+          <p className="note">{PRODUCT.signoff}</p>
+          <p className="fine-print">{PRODUCT.safety}</p>
+        </div>
+      </section>
+
+      {JUDGEME_ENABLED && (
+        <section className="section container reviews" id="reviews">
+          <h2 className="section-title">Reviews</h2>
+          <ReviewWidget productTitle={PRODUCT.name} />
+        </section>
+      )}
+    </>
   )
 }
 
