@@ -1,7 +1,7 @@
 // Site copy, based on the Shopify storefront export in src/assets/content/.
 // Edit text here rather than in the page components.
 
-export const TAGLINE = 'Meant to chew, made to love.'
+export const TAGLINE = 'Made to chew, meant to love.'
 
 export const CONTACT = {
   email: 'nellieandthelittles@gmail.com',
@@ -26,6 +26,22 @@ export const PRODUCT = {
     'Adorable elephant design that’s just as cute as it is functional',
   ],
   signoff: 'From my heart to your home. I can’t wait for your little to have a Nellie.',
+  // Collapsible "Product Details & Specifications" panel on the Meet Nellie page
+  details: {
+    intro:
+      'Meet Nellie the Elephant — a sweet little companion designed for tiny hands, curious mouths, and everyday comfort.',
+    specs: [
+      ['Material', 'Silicone'],
+      ['Dimensions', 'Approximately 4.0" × 4.0" × 0.71"'],
+      ['Product weight', 'Approximately 2.7 oz (76.6 g)'],
+      ['Retail packaging dimensions', '5.62" × 4.59" × 0.88"'],
+      ['Retail packaged weight', 'Approximately 4.08 oz (115.6 g)'],
+      ['Design', 'Easy-to-grasp elephant shape'],
+      ['Construction', 'Designed without openings that trap water'],
+    ] as [string, string][],
+    care: 'Wash before first use. Follow the product’s validated cleaning instructions. Always inspect before use and discontinue use if damaged.',
+    safety: 'Nellie has undergone third-party product safety testing.',
+  },
   safety:
     'Nellie the Elephant is intended for use as a teething toy. Always inspect before each use and discontinue use at the first sign of damage or weakness.',
 }
@@ -34,7 +50,7 @@ export const FOUNDER = {
   name: 'Jessica Adams, FNP-C',
   role: 'Creator of Nellie and the Littles',
   intro:
-    'Hi, I’m Jessica — a Family Nurse Practitioner, a lifelong caregiver, and someone who deeply understands the importance of comfort, safety, and emotional connection during a child’s earliest stages.',
+    'Hi, I’m Jessica — a Family Nurse Practitioner with a passion for caring for others. I created Nellie with the hope of bringing a little extra comfort and joy to babies and their families, while creating something that feels like more than just a teether — a sweet little companion to love.',
   // Short line used on the home page
   highlight:
     'I designed Nellie with intention: to be more than a teether — to be a tiny companion for little wild hearts.',
@@ -48,28 +64,108 @@ export const FOUNDER = {
   ],
 }
 
-export const FAQS = [
+// Each answer is a list of blocks: a string is a paragraph, an array of
+// [label, value] pairs is a spec list.
+export type FaqBlock = string | [string, string][]
+
+export const FAQS: { question: string; answer: FaqBlock[] }[] = [
   {
     question: 'What is Nellie made of?',
-    answer: 'Crafted from 100% food-grade silicone that is BPA-free, PVC-free, and phthalate-free.',
+    answer: [
+      'Nellie is thoughtfully crafted from 100% food-grade silicone, designed to be gentle on little gums and easy for tiny hands to hold.',
+      'Nellie is also BPA-free, PVC-free, and phthalate-free.',
+    ],
   },
   {
-    question: 'Is the teether safe for my baby?',
-    answer:
-      'Yes, Nellie adheres to strict safety regulations and is tested by an independent, CPSC-accredited lab to ensure it meets CPSIA safety standards. You can feel confident that Nellie is safe and durable.',
+    question: 'Is Nellie safe for my baby?',
+    answer: [
+      'Your little one’s safety is our top priority!',
+      'Nellie has undergone independent third-party laboratory testing and passed applicable CPSIA and ASTM F963 safety tests, including evaluations for mechanical safety, lead, heavy metals, and phthalates.',
+      'Nellie’s manufacturer has also documented passing results under FDA 21 CFR 177.2600, a standard for rubber materials intended for repeated food contact.',
+      'We maintain a Children’s Product Certificate (CPC) documenting compliance with applicable children’s product safety requirements.',
+      'As with any baby product, always use Nellie under adult supervision. Inspect before each use and discontinue use immediately if any signs of damage appear.',
+    ],
   },
   {
-    question: 'How do I clean the teether?',
-    answer:
-      'To clean the teether, simply wash with mild soap and warm water, or place in the dishwasher on the top rack.',
+    question: 'What age is Nellie recommended for?',
+    answer: [
+      'Nellie is designed for babies 3 months and older, making her a sweet little companion throughout the teething stages.',
+      'Every baby develops at their own pace, and adult supervision is always recommended.',
+    ],
+  },
+  {
+    question: 'How do I clean Nellie?',
+    answer: [
+      'Keeping Nellie clean is simple!',
+      'Wash with mild soap and warm water before first use and after each use. Rinse thoroughly and allow to air dry.',
+      'Nellie is also dishwasher safe on the top rack only.',
+    ],
   },
   {
     question: 'Can Nellie be chilled or frozen?',
-    answer: 'Yes, Nellie is freezer-safe so you can chill or freeze it for extra teething relief.',
+    answer: [
+      'Yes! Nellie is freezer safe, so she can be chilled in the refrigerator or freezer for a little extra teething comfort.',
+      'After taking Nellie out of the freezer, let her sit for a few minutes before giving her to your little one, as extremely cold, hard surfaces may be uncomfortable for sensitive gums.',
+    ],
+  },
+  {
+    question: 'What are Nellie’s product specifications?',
+    answer: [
+      'Nellie was thoughtfully designed to be lightweight and easy for little hands to grasp.',
+      [
+        ['Material', '100% food-grade silicone'],
+        ['Dimensions', 'Approximately 4.0 × 4.0 × 0.71 inches'],
+        ['Weight', 'Approximately 2.7 oz (76.6 g)'],
+        ['Recommended age', '3 months and up'],
+        ['Design', 'Elephant-shaped silicone teether'],
+        ['Packaging', 'Individually packaged in a retail box'],
+      ],
+    ],
+  },
+  {
+    question: 'Where do you ship?',
+    answer: [
+      'We currently ship throughout the United States.',
+      'Shipping options and estimated delivery costs are displayed at checkout.',
+    ],
+  },
+  {
+    question: 'How long will my order take to arrive?',
+    answer: [
+      'We work hard to get Nellie on her way to you as quickly as possible!',
+      'Once your order ships, you’ll receive a confirmation email with tracking information so you can follow Nellie’s journey to your home.',
+      'Delivery times vary depending on your location and the shipping service selected.',
+    ],
   },
   {
     question: 'Do you accept returns?',
-    answer:
-      'Absolutely! We accept returns within 30 days of delivery if you are not fully satisfied with your order.',
+    answer: [
+      'We want you to love your Nellie!',
+      'If you’re not completely satisfied with your purchase, please contact us within 30 days of delivery.',
+      'For hygiene and safety reasons, returns must be unused and in their original packaging, except where otherwise required by law.',
+      'If your Nellie arrives damaged or defective, please contact us so we can help make things right.',
+    ],
+  },
+  {
+    question: 'Can I purchase Nellie as a gift?',
+    answer: [
+      'Absolutely! Nellie makes a sweet and thoughtful gift for baby showers, new arrivals, and little ones beginning their teething journey.',
+      'Each Nellie arrives in her own retail packaging, ready to bring a little extra comfort and joy.',
+    ],
+  },
+  {
+    question: 'How can I contact Nellie & the Littles?',
+    answer: [
+      'We’d love to hear from you!',
+      'Whether you have a question about Nellie, need assistance with an order, or simply want to share your little one’s experience, please visit our Contact page.',
+      'You can also follow along and tag us on Instagram @nellieandthelittles.',
+      'We love seeing Nellie become part of your little one’s everyday adventures!',
+    ],
   },
 ]
+
+// Closing note at the bottom of the FAQ page
+export const FAQ_SIGNOFF = {
+  lines: ['Made to chew, meant to love.', 'From my heart, to your home.'],
+  signature: 'XO, Jessica',
+}

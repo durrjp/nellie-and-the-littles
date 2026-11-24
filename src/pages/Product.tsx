@@ -1,5 +1,7 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Leaf } from 'lucide-react'
+import SpecList from '../components/SpecList'
 import { PRODUCT_URL } from '../config'
 import { PRODUCT, TAGLINE } from '../content'
 import frontImg from '../assets/images/nellie-front.webp'
@@ -47,6 +49,21 @@ function Product() {
         <a className="button" href={PRODUCT_URL} target="_blank" rel="noreferrer">
           Shop Nellie
         </a>
+
+        <details className="details-panel">
+          <summary>Product Details &amp; Specifications</summary>
+          <div className="details-panel-body">
+            <p>{PRODUCT.details.intro}</p>
+            <SpecList specs={PRODUCT.details.specs} />
+            <h3>Care Instructions</h3>
+            <p>{PRODUCT.details.care}</p>
+            <h3>Safety &amp; Materials</h3>
+            <p>
+              {PRODUCT.details.safety} See our <Link to="/faq">Safety &amp; FAQ page</Link> for more
+              information.
+            </p>
+          </div>
+        </details>
 
         <h2 className="product-subhead">Why you’ll love Nellie</h2>
         <ul className="leaf-list">

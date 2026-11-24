@@ -30,7 +30,7 @@ function Layout() {
   return (
     <>
       <Leaves />
-      <div className="announcement">Meant to chew. Made to love.</div>
+      <div className="announcement">Made to chew. Meant to love.</div>
 
       <header className="site-header">
         <div className="container">

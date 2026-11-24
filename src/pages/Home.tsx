@@ -26,9 +26,9 @@ function Home() {
       <section className="hero">
         <div className="hero-copy">
           <h1>
-            Meant to Chew.
+            Made to Chew.
             <br />
-            Made to Love.
+            Meant to Love.
           </h1>
           <p>Thoughtfully designed for little hands. Safe, soothing, and made for every milestone.</p>
           <a className="button" href={PRODUCT_URL} target="_blank" rel="noreferrer">

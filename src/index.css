@@ -602,8 +602,82 @@ a {
   font-weight: 500;
 }
 
-.faq details p {
+.faq-answer {
   padding: 0 1.25rem 1rem;
+}
+
+.faq-answer p {
+  margin: 0 0 0.75rem;
+}
+
+.faq-answer > :last-child {
+  margin-bottom: 0;
+}
+
+.faq-signoff {
+  margin-top: 2.5rem;
+  font-family: var(--font-heading);
+  font-style: italic;
+  color: var(--green-dark);
+}
+
+.faq-signoff p {
+  margin: 0 0 0.25rem;
+}
+
+.faq-signoff .letter-signature {
+  font-style: normal;
+  margin-top: 0.5rem;
+}
+
+/* Collapsible panel on the Meet Nellie page */
+.details-panel {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  margin: 2rem 0 0;
+}
+
+.details-panel summary {
+  cursor: pointer;
+  padding: 1rem 1.25rem;
+  font-weight: 500;
+}
+
+.details-panel-body {
+  padding: 0 1.25rem 1.25rem;
+}
+
+.details-panel-body h3 {
+  font-size: 1.1rem;
+  margin: 1.25rem 0 0.4rem;
+}
+
+.details-panel-body p {
+  margin: 0 0 0.75rem;
+}
+
+.spec-list {
+  margin: 0 0 0.75rem;
+}
+
+.spec-list div {
+  display: grid;
+  grid-template-columns: minmax(9rem, 40%) 1fr;
+  gap: 1rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.spec-list div:last-child {
+  border-bottom: 0;
+}
+
+.spec-list dt {
+  font-weight: 500;
+}
+
+.spec-list dd {
   margin: 0;
 }
 
